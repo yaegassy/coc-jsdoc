@@ -1,6 +1,6 @@
-# coc-jsdoc
+# [WIP] coc-jsdoc
 
-**[WIP]**
+> Currently, the implementation code has not been pushed yet, so it is not available for installation.
 
 [lehre](https://www.npmjs.com/package/lehre) (jsdoc/esdoc/tsdoc document block generator) extension for [coc.nvim](https://github.com/neoclide/coc.nvim)
 
