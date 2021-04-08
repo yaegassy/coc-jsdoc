@@ -1,0 +1,99 @@
+{
+  "name": "coc-jsdoc",
+  "version": "0.1.0",
+  "description": "lehre (jsdoc/esdoc/tsdoc document block generator) extension for coc.nvim",
+  "author": "yaegassy <yosstools@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim",
+    "typescript",
+    "javascript",
+    "jsdoc",
+    "esdoc",
+    "tsdoc",
+    "vim",
+    "neovim"
+  ],
+  "engines": {
+    "coc": "^0.0.80"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "@types/tmp": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "coc.nvim": "^0.0.80",
+    "esbuild": "^0.8.42",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.2",
+    "tmp": "^0.1.0"
+  },
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:javascript.jsx",
+    "onLanguage:typescript",
+    "onLanguage:typescript.tsx",
+    "onLanguage:typescript.jsx",
+    "onLanguage:typescriptreact"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-jsdoc configuration",
+      "properties": {
+        "jsdoc.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-jsdoc extension"
+        },
+        "jsdoc.lehrePath": {
+          "type": "string",
+          "default": "",
+          "description": "The path to the lehre tool (Absolute path)"
+        },
+        "jsdoc.formatter": {
+          "type": "string",
+          "default": "jsdoc",
+          "enum": [
+            "jsdoc",
+            "esdoc",
+            "tsdoc"
+          ],
+          "description": "Document block formatter. jsdoc, esdoc or tsdoc"
+        },
+        "jsdoc.enableFileAction": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable file-level code action"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "jsdoc.run",
+        "title": "Run lehre for file"
+      }
+    ]
+  },
+  "dependencies": {
+    "lehre": "^1.3.5"
+  }
+}
