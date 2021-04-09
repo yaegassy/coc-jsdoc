@@ -6,7 +6,7 @@
 
 ## [WIP]TODO
 
-- [ ] For "line" and "range" of "Code Actions", automatically detect and process the range of the corresponding symbol block
+- For "line" and "range" of "Code Actions", automatically detect and process the range of the corresponding symbol block
 
 ## Install
 
